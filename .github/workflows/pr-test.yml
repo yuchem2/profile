@@ -35,20 +35,8 @@ jobs:
 
       - name: Setting git config
         run: |
-          USER_INFO=$(curl -L \
-          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-          -H "Accept: application/vnd.github.v3+json" \
-          -H "X-GitHub-Api-Version: 2022-11-28" \
-          https://api.github.com/user/
-          
-          AUTHOR_NAME=$(echo "${USER_INFO}" | jq -r '.name')
-          AUTHOR_EMAIL=$(echo "${USER_INFO}" | jq -r '.email')
-          
-          echo "AUTHOR_NAME=${AUTHOR_NAME}" >> $GITHUB_ENV
-          echo "AUTHOR_EMAIL=${AUTHOR_EMAIL}" >> $GITHUB_ENV
-          
-          git config --global user.name "${{ env.AUTHOR_NAME }}"
-          git config --global user.email "${{ env.AUTHOR_EMAIL }}"
+          git config --global user.name "Yoon JaeHyun"
+          git config --global user.email "yuchem2@gmail.com"
 
       - name: Deploy to Github Pages
         run: pnpm GHdeploy
