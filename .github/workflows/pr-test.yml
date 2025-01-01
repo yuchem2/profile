@@ -35,13 +35,18 @@ jobs:
 
       - name: Setting git config
         env:
-          USER_NAME: ${{ github.event.pull_request.user.name }}
-          USER_EMAIL: ${{ github.event.pull_request.user.email }}
-          TEST: ${{ toJson(github.event.pull_request.user) }}
-        run:
-          echo "$TEST"
-          git config --global user.email "$USER_EMAIL"
-          git config --global user.name "$USER_NAME"
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+        run: |
+          USER_INFO=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github.v3+json" https://api.github.com/users/${PR_AUTHOR})
+          
+          AUTHOR_NAME=$(echo "${USER_INFO}" | jq -r '.name')
+          AUTHOR_EMAIL=$(echo "${USER_INFO}" | jq -r '.email')
+          
+          echo "AUTHOR_NAME=${AUTHOR_NAME}" >> $GITHUB_ENV
+          echo "AUTHOR_EMAIL=${AUTHOR_EMAIL}" >> $GITHUB_ENV
+          
+          git config --global user.name "${{ env.AUTHOR_NAME }}"
+          git config --global user.email "${{ env.AUTHOR_EMAIL }}"
 
       - name: Deploy to Github Pages
         run: pnpm GHdeploy
