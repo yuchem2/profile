@@ -35,7 +35,7 @@ jobs:
 
       - name: Setting git config
         run: |
-          git config --global user.name "Yoon JaeHyun"
+          git config --global user.name "Yoon Jaehyun"
           git config --global user.email "yuchem2@gmail.com"
 
       - name: Deploy to Github Pages
