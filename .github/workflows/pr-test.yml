@@ -37,9 +37,11 @@ jobs:
         run: |
           PR_AUTHOR=${{ github.event.pull_request.user.login }}
           
-          USER_INFO=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \\
-          -H "Accept: application/vnd.github.v3+json" \\
-          https://api.github.com/users/${PR_AUTHOR})
+          USER_INFO=$(curl -L \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          https://api.github.com/user/${PR_AUTHOR}
           
           AUTHOR_NAME=$(echo "${USER_INFO}" | jq -r '.name')
           AUTHOR_EMAIL=$(echo "${USER_INFO}" | jq -r '.email')
