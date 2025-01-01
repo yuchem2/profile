@@ -37,7 +37,7 @@ jobs:
         env:
           USER_NAME: ${{ github.event.pull_request.user.name }}
           USER_EMAIL: ${{ github.event.pull_request.user.email }}
-          TEST: ${{ github.event.pull_request }}
+          TEST: ${{ toJson(github.event.pull_request.user) }}
         run:
           echo "$TEST"
           git config --global user.email "$USER_EMAIL"
