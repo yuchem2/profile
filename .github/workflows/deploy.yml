@@ -1,12 +1,15 @@
-name: Deploy to Github Pages
+name: pull request test
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
 jobs:
-  deploy:
-    if: github.event_name == 'push'
+  test:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,13 +30,20 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Setting git config
-        env:
-          USER_NAME: ${{ github.event.pull_request.user.name }}
-          USER_EMAIL: ${{ github.event.pull_request.user.email }}
-        run:
-          git config --global user.email "$USER_EMAIL"
-          git config --global user.name "$USER_NAME"
+      - name: Build Project
+        run: pnpm build
+
+      - name: Test
+        run: pnpm test
+  deploy:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Deploy to Github Pages
-        run: pnpm GHdeploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_ACTIONS_TOKEN }}
+          publish_dir: ./build
