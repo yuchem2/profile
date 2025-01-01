@@ -10,7 +10,7 @@
     "build": "react-scripts build",
     "test": "jest --passWithNoTests",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "GHdeploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
