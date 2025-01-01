@@ -34,10 +34,12 @@ jobs:
         run: pnpm test
 
       - name: Setting git config
-        env:
-          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
         run: |
-          USER_INFO=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github.v3+json" https://api.github.com/users/$PR_AUTHOR)
+          PR_AUTHOR=${{ github.event.pull_request.user.login }}
+          
+          USER_INFO=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \\
+          -H "Accept: application/vnd.github.v3+json" \\
+          https://api.github.com/users/${PR_AUTHOR})
           
           AUTHOR_NAME=$(echo "${USER_INFO}" | jq -r '.name')
           AUTHOR_EMAIL=$(echo "${USER_INFO}" | jq -r '.email')
