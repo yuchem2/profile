@@ -1,5 +1,12 @@
 import './App.css'
-import Content from './component/content'
+
+import ContactItem from './component/contactItem'
+import Skill from './document/skills'
+import Education from './document/education'
+import Career from './document/career'
+import Awards from './document/awards'
+import Project from './document/project'
+import Others from './document/ohters'
 
 export default function App() {
     return (
@@ -7,18 +14,22 @@ export default function App() {
             <div className="Profile-container">
                 <div className="Profile-block">
                     <span className="Profile-header">ABOUT ME</span>
-                    <span className="Profile-paragraph">(짧은 자기소개)</span>
+                    <p className="Profile-paragraph">(짧은 자기소개)</p>
                 </div>
-                <div className="Profile-block">
+                <div className="Contact-block">
                     <span className="Profile-header">CONTACT</span>
+                    <div className="Item-block">
+                        <ContactItem title="Email" link="yuchem2@gmail.com" prevent={true} />
+                        <ContactItem title="Github" link="https://github.com/yuchem2" />
+                    </div>
                 </div>
             </div>
-            <Content title="EDUCATION"></Content>
-            <Content title="SKILLS"></Content>
-            <Content title="CAREER"></Content>
-            <Content title="AWARDS"></Content>
-            <Content title="PROJECT"></Content>
-            <Content title="OTHERS"></Content>
+            <Skill />
+            <Education />
+            <Career />
+            <Awards />
+            <Project />
+            <Others />
         </div>
     )
 }
