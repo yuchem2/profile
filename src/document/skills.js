@@ -5,30 +5,23 @@ export default function Skill() {
     return (
         <Content title="SKILLS">
             <ProfileItem title="Backend">
-                <p className="Profile-paragraph">
-                    <ul>
-                        <li>JavaScript, Typescript</li>
-                        <li>Node.js (Express)</li>
-                        <li>MySQL, MongoDB</li>
-                    </ul>
-                </p>
+                <ul className="Profile-paragraph">
+                    <li>JavaScript, Typescript</li>
+                    <li>Node.js (Express)</li>
+                    <li>MySQL, MongoDB</li>
+                </ul>
             </ProfileItem>
             <ProfileItem title="Frontend">
-                <p className="Profile-paragraph">
-                    <ul>
-                        <li>HTML5, CSS3, JavaScript, TypeScript</li>
-                        <li>React, Next.js</li>
-                    </ul>
-                </p>
+                <ul className="Profile-paragraph">
+                    <li>HTML5, CSS3, JavaScript, TypeScript</li>
+                    <li>React, Next.js</li>
+                </ul>
             </ProfileItem>
             <ProfileItem title="Etc">
-                <p className="Profile-paragraph">
-                    <ul>
-                        <li>Git, Github</li>
-                        <li>Notion, JetBrains Space</li>
-                        <li>AWS S3, AWS CloudFront</li>
-                    </ul>
-                </p>
+                <ul className="Profile-paragraph">
+                    <li>Git, Github</li>
+                    <li>Notion, JetBrains Space</li>
+                </ul>
             </ProfileItem>
         </Content>
     )
