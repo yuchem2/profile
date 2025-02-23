@@ -50,7 +50,7 @@ export default function Project() {
                         <span>역할: {project.role}</span>
                         <div className="Project-links">
                             {project.url.map(u => (
-                                <a key={`${project.title}-${u.title}-url`} href={u.href}>{`${u.name === 'none' ? 'Repository' : `${u.name}`}`}</a>
+                                <a key={`${project.title}-${u.title}-url`} href={u.href}>{`${u.href}`}</a>
                             ))}
                         </div>
                     </div>

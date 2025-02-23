@@ -47,6 +47,12 @@
   color: #148fb8;
 }
 
+.Profile-sub-header {
+  font-size: 1.8rem;
+  font-family: 'NanumSquareNeoExtraBold', serif;
+  color: #148fb8;
+}
+
 .Profile-paragraph {
   font-size: 1.6rem;
   font-weight: normal;
@@ -140,8 +146,8 @@
 
   & > .Project-links {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: start;
     padding-top: 1rem;
     gap: 2rem;
 
