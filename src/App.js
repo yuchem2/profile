@@ -6,6 +6,7 @@ import Education from './document/education'
 import Career from './document/career'
 import Awards from './document/awards'
 import Project from './document/project'
+import Others from './document/others'
 
 export default function App() {
     return (
@@ -33,6 +34,7 @@ export default function App() {
             <Project />
             <Awards />
             <Career />
+            <Others />
         </div>
     )
 }

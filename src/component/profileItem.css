@@ -9,13 +9,17 @@
     @media(max-width: 768px) {
         flex-direction: column;
     }
+
+    & > p {
+        width: 70%;
+    }
 }
 
 .Profile-item-header {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    width: 20%;
+    width: 30%;
     @media(max-width: 768px) {
         width: 100%;
     }
