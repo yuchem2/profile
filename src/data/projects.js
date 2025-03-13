@@ -5,7 +5,7 @@ export const projects = [
         description: '블레이버스 MVP 개발 해커톤',
         skills: ['Spring boot', 'Vite', 'React', 'JDBC', 'Kotlin', 'Typescript'],
         images: ['/images/hailor.png'],
-        paragraph: '블레이버스 MVP 개발 해커톤 출품 프로젝트. 창업팀의 아이템(헤어스타일 컨설팅 예약 서비스)을 MVP로 웹 앱 방식으로 구현.',
+        paragraph: '블레이버스 MVP 개발 해커톤 출품 프로젝트로 창업팀의 아이템(헤어스타일 컨설팅 예약 서비스)을 MVP로 웹 앱 방식으로 구현.',
         members: 8,
         role: '프론트엔드 총 책임. 카카오페이 결제 도입. 예약 프로세스 개발. 성능 최적화 진행',
         url: [
@@ -25,7 +25,7 @@ export const projects = [
         description: 'Atlassian codegeist 2024',
         skills: ['Forge', 'Node.js', 'React', 'JavaScript'],
         images: ['/images/doculink.png'],
-        paragraph: 'Atlassian codegeist 2024 출품 프로젝트. Confluence 문서들의 관계를 찾아내서 그래프 형태로 보여주는 Extension.',
+        paragraph: 'Atlassian codegeist 2024 출품 프로젝트로, Confluence 문서들의 관계를 찾아내서 그래프 형태로 보여주는 Extension.',
         members: 5,
         role: '사용자 화면 개발. Rovo를 통한 문서 관계 추출 prompt 작성',
         url: [
@@ -42,7 +42,7 @@ export const projects = [
         skills: ['Express.js', 'Node.js', 'Next.js', 'React', 'React Native', 'mongoDB', 'TypeScript'],
         images: ['/images/fienmee.png'],
         paragraph:
-            '다양한 사이트에 파편화되어 있는 행사와 축제 정보를 한 눈에 볼 수 있는 네이티브 앱. 사용자가 직접 행사를 등록하고 공유하는 플랫폼.',
+            '다양한 사이트에 파편화되어 있는 행사와 축제 정보를 한 눈에 볼 수 있는 네이티브 앱으로 사용자가 직접 행사를 등록하고 공유하는 서비스.',
         members: 7,
         role: '기획과 UI/UX 설계 참여. 웹 뷰 개발 및 네이티브 웹 개발. 웹과 네이티브 앱의 통신 관리',
         url: [
@@ -58,7 +58,7 @@ export const projects = [
         description: 'DSC 빅테이터/AI 해커톤',
         skills: ['Django', 'Jupyter Notebook', 'Next.js', 'React', 'Typescript'],
         images: ['/images/erai.png'],
-        paragraph: 'DSC 빅테이터/AI 해커톤 출품 프로젝트. 사용자의 글 스타일을 학습해 문단을 생성하는 LLM 서비스.',
+        paragraph: 'DSC 빅테이터/AI 해커톤 출품 프로젝트로, 사용자의 글 스타일을 학습해 문단을 생성하는 LLM 서비스.',
         members: 3,
         role: '데이터 분석. UI/UX 설계. 프론트엔드 개발',
         url: [
@@ -75,7 +75,7 @@ export const projects = [
         skills: ['Express.js', 'Node.js', 'Expo', 'React Native', 'mongoDB', 'TypeScript'],
         images: ['/images/rebridge.png'],
         paragraph:
-            '제3회 고용노동부 주관 공공데이터 활용 공모전 출품 프로젝트. 퇴직 후 재취업을 희망하는 중·장년층을 위한 맞춤형 직업 교육 추천 서비스.',
+            '제3회 고용노동부 주관 공공데이터 활용 공모전 출품 프로젝트로, 퇴직 후 재취업을 희망하는 중·장년층을 위한 맞춤형 직업 교육 추천 서비스.',
         members: 4,
         role: 'RESTful API 개발. React Native 환경 세팅 및 개발',
         url: [
