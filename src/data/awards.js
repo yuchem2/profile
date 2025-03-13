@@ -1,5 +1,11 @@
 export const awards = [
     {
+        title: '졸업 특대생 표창',
+        duration: '2025.02',
+        description: '고려대학교',
+        paragraph: '고려대학교 과학기술대학 졸업 특대생 선정 표창',
+    },
+    {
         title: '학기 최우등생 학장상',
         duration: '2019-2학기, 2022-2학기',
         description: '고려대학교',

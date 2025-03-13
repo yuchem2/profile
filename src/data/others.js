@@ -17,6 +17,12 @@ export const indoors = [
         paragraph:
             '학과에서 운영하는 프로그래밍 언어 학습 도움 센터로, 학기 시작 전 코딩테스트 및 면접을 보고 선발된 학생들이 근무하는 곳입니다. 주 활동은 프로그래밍 수업(C, C++, Python, Java 등)을 듣는 학생들의 질문에 답변하는 것입니다.',
     },
+    {
+        title: 'ICPS 연구실 학부연구생 활동',
+        duration: '2022.03-2023.02',
+        description: '고려대학교 세종캠퍼스 ICPS 연구실',
+        paragraph: 'AI를 이용한 수화 인식 연구를 위한 데이터 수집 및 전처리 수행했습니다. 그 후 해당 연구를 위한 모델 구현을 함께 진행하였습니다.',
+    },
 ]
 
 export const certificates = [

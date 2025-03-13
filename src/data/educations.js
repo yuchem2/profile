@@ -6,11 +6,6 @@ export const educations = [
         paragraph: '컴퓨터융합소프트웨어학과\n4.4 / 4.5',
     },
     {
-        title: '한세대학교',
-        duration: '2018.03-2010.01',
-        paragraph: '전자소프트웨어학과 중퇴',
-    },
-    {
         title: '마포고등학교',
         duration: '2015.03-2018.02',
         paragraph: '2018학년도 졸업',
