@@ -4,7 +4,7 @@ import { NavLink } from 'react-router'
 export default function Main() {
     return (
         <div className="Main">
-            <span className="Title">윤재현</span>
+            <span className="Title">개발자 윤재현</span>
             <div className="Link-block">
                 <NavLink to="/resume" className="Link">
                     이력서 보기
@@ -15,19 +15,21 @@ export default function Main() {
             </div>
             <div className="Keywords">
                 <div className="Keyword">
-                    <span className="title">capacity</span>
-                    <span className="Keyword-title">호기심과 학습</span>
-                    <span className="paragraph">다양한 분야에 대한 호기심을 바탕으로 새로운 지식을 탐구하고 깊이 있는 이해를 추구합니다</span>
+                    <span className="title">Value</span>
+                    <span className="Keyword-title">성장과 공유</span>
+                    <span className="paragraph">
+                        지식을 나누며 함께 성장하는 것이 최고의 배움이라 생각하며, 스터디와 협업을 통해 지속적인 성장을 추구합니다
+                    </span>
                 </div>
                 <div className="Keyword">
-                    <span className="title">capacity</span>
+                    <span className="title">Principle</span>
                     <span className="Keyword-title">협업과 소통</span>
-                    <span className="paragraph">원할한 소통을 통해 팀과 함께 더 나은 결과를 만들어가고자 합니다</span>
+                    <span className="paragraph">원할한 소통과 적절한 협업은 더 나은 가치를 만든다고 믿으며, 이를 실천하고자 합니다.</span>
                 </div>
                 <div className="Keyword">
-                    <span className="title">capacity</span>
-                    <span className="Keyword-title">유연함과 균형</span>
-                    <span className="paragraph">변화하는 환경에서도 유연하게 사고하며 균형 잡힌 해결책을 찾도록 노력합니다</span>
+                    <span className="title">Focus</span>
+                    <span className="Keyword-title">사용자 경험</span>
+                    <span className="paragraph">단순한 기능을 구현하는 것을 넘어 사용자 경험이 가장 중요한 가치라고 생각하고 실천하고자 합니다</span>
                 </div>
             </div>
         </div>

@@ -21,7 +21,7 @@ export const projects = [
     },
     {
         title: 'DocuLink',
-        duration: '2025.01-ing',
+        duration: '2024.11-ing',
         description: 'Atlassian codegeist 2024',
         skills: ['Forge', 'Node.js', 'React', 'JavaScript'],
         images: ['/images/doculink.png'],
@@ -49,22 +49,6 @@ export const projects = [
             {
                 name: 'none',
                 href: 'https://github.com/Beyond-Imagination/fienmee',
-            },
-        ],
-    },
-    {
-        title: 'ERAI',
-        duration: '2024.12(5일)',
-        description: 'DSC 빅테이터/AI 해커톤',
-        skills: ['Django', 'Jupyter Notebook', 'Next.js', 'React', 'Typescript'],
-        images: ['/images/erai.png'],
-        paragraph: 'DSC 빅테이터/AI 해커톤 출품 프로젝트로, 사용자의 글 스타일을 학습해 문단을 생성하는 LLM 서비스.',
-        members: 3,
-        role: '데이터 분석. UI/UX 설계. 프론트엔드 개발',
-        url: [
-            {
-                name: 'none',
-                href: 'https://github.com/yuchem2/erai',
             },
         ],
     },
@@ -106,22 +90,6 @@ export const projects = [
             {
                 name: 'Back-end',
                 href: 'https://github.com/Beyond-Imagination/arecibo-be/tree/develop',
-            },
-        ],
-    },
-    {
-        title: '캡스톤디자인',
-        duration: '2023.02-2023.12',
-        description: '학과 졸업프로젝트',
-        skills: ['Django', 'MySQL', 'Pythom', 'CommonJS'],
-        images: ['/images/capstonProject.png'],
-        paragraph: '강의에 필요한 교재의 최저가를 찾아주고, NLP 기술과 CBF 알고리즘을 통해 관련 도서 추천 서비스.',
-        members: 2,
-        role: '웹 크롤링 적용, DB 설계, 사용자 페이지 개발',
-        url: [
-            {
-                name: 'none',
-                href: 'https://github.com/aurorawhale/2023_CapstoneDesign',
             },
         ],
     },
