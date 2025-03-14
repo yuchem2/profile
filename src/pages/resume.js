@@ -12,9 +12,13 @@ export default function Resume() {
                     <span className="Profile-header">ABOUT ME</span>
                     <p className="Profile-paragraph">
                         안녕하세요. 프론트엔드 개발자 윤재현입니다. <br />
-                        다양한 분야에 대한 호기심을 바탕으로 Next.js와 TypeScript를 활용해 사용자 경험을 고민하며 개발하고 있습니다. 협업과 소통을
-                        중요하게 생각하며, 기획부터 개발까지 팀과 함께 더 나은 결과를 만들어가는 과정에 가치를 둡니다. 변화하는 환경속에서도 유연함과
-                        균형을 유지하며, 지속적으로 배우고 성장하기 위해 노력합니다.
+                        <br />
+                        <span className="highlight">배움을 나누며 함께 성장하는 것을 좋아합니다.</span> <br />
+                        스터디, 세미나, 협업을 통해 지식을 나누고 팀원들과 함께 성장하는 것에 즐거움을 느낍니다. <br />
+                        또한, 멘토링, 튜터링과 같은 활동을 통해 제 경험과 지식을 공유하며 함께 배우는 과정에서 많은 것을 얻고 있습니다. <br />
+                        <br />
+                        <span className="highlight">사용자 경험이 가장 중요한 가치라고 생각하고 개발을 하고 있습니다.</span> <br />
+                        단순히 기능을 구현하는 것을 넘어, 직관적인 UI와 원할한 상호작용을 제공하는 것이 사용자의 만족도를 높인다고 생각합니다.
                     </p>
                 </div>
                 <div className="Contact-block">
