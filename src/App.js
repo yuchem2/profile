@@ -5,12 +5,6 @@ import Portfolio from './pages/portfolio'
 import Main from './pages/main'
 
 export default function App() {
-    const savedPath = sessionStorage.getItem('redirectPath')
-    if (savedPath) {
-        sessionStorage.removeItem('redirectPath')
-        window.history.replaceState(null, '', savedPath)
-    }
-
     return (
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
