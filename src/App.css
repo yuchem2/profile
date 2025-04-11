@@ -1,7 +1,7 @@
 .Profile {
   background-color: #FFFFFF;
   min-height: 100vh;
-  max-width: 80%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 3rem;
