@@ -7,7 +7,7 @@ export default function Skill() {
             <ProfileItem title="Backend">
                 <ul className="Profile-paragraph">
                     <li>JavaScript, Typescript</li>
-                    <li>Node.js (Express)</li>
+                    <li>Node.js, Express</li>
                     <li>MySQL, MongoDB</li>
                 </ul>
             </ProfileItem>

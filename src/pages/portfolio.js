@@ -1,21 +1,12 @@
-import { LeftArrow } from '../component/icon/arrow'
+import Skill from '../document/skills'
+import Abstract from '../document/abstact'
+import { GithubIcon, NotionIcon } from '../component/icon/logo'
 
 export default function Portfolio() {
     return (
         <div className="Profile">
-            <div className="Profile-block">
-                <span className="Profile-header">ABOUT ME</span>
-                <p className="Profile-paragraph">
-                    안녕하세요. 프론트엔드 개발자 윤재현입니다. <br />
-                    <br />
-                    <span className="highlight">배움을 나누며 함께 성장하는 것을 좋아합니다.</span> <br />
-                    스터디, 세미나, 협업을 통해 지식을 나누고 팀원들과 함께 성장하는 것에 즐거움을 느낍니다. <br />
-                    또한, 멘토링, 튜터링과 같은 활동을 통해 제 경험과 지식을 공유하며 함께 배우는 과정에서 많은 것을 얻고 있습니다. <br />
-                    <br />
-                    <span className="highlight">사용자 경험이 가장 중요한 가치라고 생각하고 개발을 하고 있습니다.</span> <br />
-                    단순히 기능을 구현하는 것을 넘어, 직관적인 UI와 원할한 상호작용을 제공하는 것이 사용자의 만족도를 높인다고 생각합니다.
-                </p>
-            </div>
+            <Abstract />
+            <Skill />
             <div className="Profile-block">
                 <span className="Profile-header">PROJECTS</span>
                 <div className="Project-main">
@@ -29,8 +20,8 @@ export default function Portfolio() {
                             </p>
                             <div className="Project-links">
                                 <a href="https://github.com/MVPHotSix/Hailor-FE" target="_blank" rel="noreferrer">
-                                    <span>Repository</span>
-                                    <LeftArrow width="1.6rem" height="1.6rem" />
+                                    <GithubIcon width="1.6rem" height="1.6rem" />
+                                    <span>Github</span>
                                 </a>
                             </div>
                             <span>2025.02.10 - 20205.02.20</span>
@@ -119,12 +110,12 @@ export default function Portfolio() {
                             </p>
                             <div className="Project-links">
                                 <a href="https://github.com/Beyond-Imagination/arecibo-be/tree/develop" target="_blank" rel="noreferrer">
-                                    <span>Backend Repository</span>
-                                    <LeftArrow width="1.6rem" height="1.6rem" />
+                                    <GithubIcon width="1.6rem" height="1.6rem" />
+                                    <span>Github(Backend)</span>
                                 </a>
                                 <a href="https://github.com/Beyond-Imagination/arecibo-fe/tree/develop" target="_blank" rel="noreferrer">
-                                    <span>Frontend Repository</span>
-                                    <LeftArrow width="1.6rem" height="1.6rem" />
+                                    <GithubIcon width="1.6rem" height="1.6rem" />
+                                    <span>Github(Frontend)</span>
                                 </a>
                             </div>
                             <span>2023.08-2024.09</span>
@@ -230,12 +221,12 @@ export default function Portfolio() {
                             </p>
                             <div className="Project-links">
                                 <a href="https://github.com/Beyond-Imagination/rebridge-be" target="_blank" rel="noreferrer">
-                                    <span>Backend Repository</span>
-                                    <LeftArrow width="1.6rem" height="1.6rem" />
+                                    <GithubIcon width="1.6rem" height="1.6rem" />
+                                    <span>Github(Backend)</span>
                                 </a>
                                 <a href="https://github.com/Beyond-Imagination/rebridge-fe" target="_blank" rel="noreferrer">
-                                    <span>Frontend Repository</span>
-                                    <LeftArrow width="1.6rem" height="1.6rem" />
+                                    <GithubIcon width="1.6rem" height="1.6rem" />
+                                    <span>Github(Frontend)</span>
                                 </a>
                             </div>
                             <span>2024.03 - 2024.07</span>
@@ -322,16 +313,16 @@ export default function Portfolio() {
                             </p>
                             <div className="Project-links">
                                 <a href="https://github.com/Beyond-Imagination/fienmee" target="_blank" rel="noreferrer">
-                                    <span>Repository</span>
-                                    <LeftArrow width="1.6rem" height="1.6rem" />
+                                    <GithubIcon width="1.6rem" height="1.6rem" />
+                                    <span>Github</span>
                                 </a>
                                 <a
                                     href="https://beyond-imagination.notion.site/Fienmee-681b57bc497344bb86821f077a42297e"
                                     target="_blank"
                                     rel="noreferrer"
                                 >
+                                    <NotionIcon width="1.6rem" height="1.6rem" />
                                     <span>Notion</span>
-                                    <LeftArrow width="1.6rem" height="1.6rem" />
                                 </a>
                             </div>
                             <span>2024.08 - ing</span>
