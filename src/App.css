@@ -69,8 +69,8 @@
   font-size: var(--font-size-h4);
   font-weight: normal;
   line-height: 1.6;
-  overflow-wrap: break-word;
-  white-space: break-spaces;
+  word-wrap: break-word;
+  white-space: pre-line;
   color: var(--text-color);
   vertical-align: text-top;
   margin-block-start: 0;

@@ -9,17 +9,19 @@ import Skill from '../document/skills';
 export default function Resume() {
   return (
     <div className="profile">
-      <div className="profile-container">
-        <Abstract />
-        <div className="contact-block">
-          <span className="profile-header">CONTACT</span>
-          <div className="item-block">
-            <ContactItem title="Email" link="yuchem2@gmail.com" prevent={true} />
-            <ContactItem title="Github" link="https://github.com/yuchem2" />
+      <div className="a4-page">
+        <div className="profile-container">
+          <Abstract />
+          <div className="contact-block">
+            <span className="profile-header">CONTACT</span>
+            <div className="item-block">
+              <ContactItem title="Email" link="yuchem2@gmail.com" prevent={true} />
+              <ContactItem title="Github" link="https://github.com/yuchem2" />
+            </div>
           </div>
         </div>
+        <Education />
       </div>
-      <Education />
       <Awards />
       <Skill />
       <Project />

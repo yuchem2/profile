@@ -9,18 +9,17 @@
   @media(max-width: 768px) {
     flex-direction: column;
   }
+}
 
-  & > p {
-    color: var(--text-color);
-    width: 100%;
-  }
+.profile-item .profile-paragraph {
+  width: 100%;
 }
 
 .profile-item-header {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 30%;
+  width: 40%;
   @media(max-width: 768px) {
     width: 100%;
   }
