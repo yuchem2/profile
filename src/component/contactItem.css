@@ -1,20 +1,20 @@
-.Contact-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    gap: 2rem;
+.contact-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 2rem;
 }
 
-.Contact-header {
-    font-size: 1.5rem;
-    font-weight: bolder;
-    color: #148fb8;
+.contact-header {
+  font-size: var(--font-size-h5);
+  font-weight: bolder;
+  color: var(--primary-color);
 }
 
-.Contact-link {
-    font-size: 1.5rem;
-    font-weight: normal;
-    color: #1B1B1B;
-    text-decoration-line: none;
-    width: 60%;
+.contact-link {
+  font-size: var(--font-size-h5);
+  font-weight: normal;
+  color: var(--text-color);
+  text-decoration-line: none;
+  width: 60%;
 }

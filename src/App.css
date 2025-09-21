@@ -1,16 +1,28 @@
-.Profile {
-  background-color: #FFFFFF;
+.profile {
+  background-color: var(--background-color);
   min-height: 100vh;
-  max-width: 100%;
+  width: 79.37rem;
+  margin: 2rem auto;
   display: flex;
   flex-direction: column;
   gap: 3rem;
   align-items: start;
   justify-content: start;
   padding: 4rem 4rem 6rem 4rem;
+  border-radius: 1rem;
+
+  @media (max-width: 980px) {
+    width: 100%;
+    margin: 0;
+  }
+
+  @media(max-width: 768px) {
+    width: 100%;
+    margin: 0;
+  }
 }
 
-.Profile-container {
+.profile-container {
   display: grid;
   grid-template-columns: 1fr auto;
   width: 100%;
@@ -22,44 +34,44 @@
   }
 }
 
-.Profile-block {
+.profile-block {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   width: 100%;
 }
 
-.Contact-block {
+.contact-block {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.Item-block {
+.item-block {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-.Profile-header {
-  font-size: 2rem;
+.profile-header {
+  font-size: var(--font-size-h2);
   font-family: 'NanumSquareNeoExtraBold', serif;
-  color: #148fb8;
+  color: var(--primary-color);
 }
 
-.Profile-sub-header {
-  font-size: 1.8rem;
+.profile-sub-header {
+  font-size: var(--font-size-h3);
   font-family: 'NanumSquareNeoExtraBold', serif;
-  color: #148fb8;
+  color: var(--primary-color);
 }
 
-.Profile-paragraph {
-  font-size: 1.6rem;
+.profile-paragraph {
+  font-size: var(--font-size-h4);
   font-weight: normal;
   line-height: 1.6;
-  overflow-wrap: break-word;
-  white-space: break-spaces;
-  color: #1B1B1B;
+  word-wrap: break-word;
+  white-space: pre-line;
+  color: var(--text-color);
   vertical-align: text-top;
   margin-block-start: 0;
 }
@@ -70,39 +82,41 @@ ul {
 }
 
 
-.Project-block {
+.project-block {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   width: 100%;
-  font-size: 1.4rem;
+  font-size: var(--font-size-h6);
 }
 
-.Project-header {
-  font-size: 1.8rem;
+.project-header {
+  color: var(--text-color);
+  font-size: var(--font-size-h3);
   font-family: 'NanumSquareNeoExtraBold', serif;
 }
 
-.Project-content {
+.project-content {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 
   & > p {
+    color: var(--text-color);
     line-height: 2.5rem;
     margin: 0;
   }
 
   & > span {
-    color: #282c34;
+    color: var(--sub-text-color);
   }
 }
 
-.Project-main {
+.project-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  border-bottom: 0.1rem solid #c8c8c8;
+  border-bottom: 0.1rem solid var(--border-color);
   padding-bottom: 1rem;
 
   @media (max-width: 768px) {
@@ -110,7 +124,7 @@ ul {
   }
 }
 
-.Project-photos {
+.project-photos {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -139,41 +153,43 @@ ul {
       }
     }
     & > span {
-      font-size: 1.2rem;
-      color: #808080;
+      font-size: var(--font-size-p);
+      color: var(--sub-text-color);
     }
   }
 }
 
-.Project-content-items {
+.project-content-items {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 
   & > span {
+    color: var(--text-color);
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: var(--font-size-h4);
   }
 
   & > ul {
     display: block;
     padding-inline-start: 2rem;
     line-height: 3rem;
+    color: var(--text-color);
     & > li {
       display: list-item;
       text-align: left;
-      font-size: 1.4rem;
+      font-size: var(--font-size-h6);
 
       & > a {
         text-decoration: none;
-        color: black;
-        border-bottom: 0.1rem #808080 solid;
+        color: var(--text-color);
+        border-bottom: 0.1rem var(--sub-text-color) solid;
       }
     }
   }
 }
 
-.Project-links {
+.project-links {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -183,14 +199,15 @@ ul {
     flex-direction: row;
     gap: 0.5rem;
     align-items: center;
-    color: #1B1B1B;
+    color: var(--text-color);
     text-decoration: none;
-    border-bottom: 0.1rem #1B1B1B solid;
+    border-bottom: 0.1rem var(--text-color) solid;
     padding-bottom: 0.2rem;
   }
 }
 
 .highlight {
-  color: #148fb8;
+  color: var(--primary-color);
   font-weight: bold;
 }
+

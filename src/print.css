@@ -1,0 +1,41 @@
+.a4-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 3rem;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .a4-page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 0 auto;
+    background: white;
+    page-break-after: always;
+  }
+
+  .a4-page:last-child {
+    page-break-after: auto;
+  }
+
+  /* Hide elements not needed for print */
+  #theme-toggle {
+    display: none !important;
+  }
+}
