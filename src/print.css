@@ -13,6 +13,12 @@
 
   * {
     box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html {
+    font-size: 56.25%;
   }
 
   body {
@@ -24,14 +30,50 @@
   .a4-page {
     width: 210mm;
     min-height: 297mm;
-    padding: 20mm;
+    padding: 12mm 10mm;
+    margin: 0 auto;
+    background: white;
+    page-break-after: always;
+    overflow: auto;
+  }
+
+  .a4-page:last-child {
+    page-break-after: auto;
+  }
+
+  .portfolio-container {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 0;
     margin: 0 auto;
     background: white;
     page-break-after: always;
   }
 
-  .a4-page:last-child {
-    page-break-after: auto;
+  .portfolio-viewport {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+  }
+
+  .portfolio-filmstrip {
+    display: flex;
+    flex-direction: column;
+    overflow: visible !important;
+    gap: 0;
+  }
+
+  .portfolio-item-wrapper {
+    width: 100%;
+    height: 297mm;
+    padding: 10mm;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  .nav-button {
+    display: none !important;
   }
 
   /* Hide elements not needed for print */
