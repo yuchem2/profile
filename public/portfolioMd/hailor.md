@@ -1,6 +1,6 @@
 ---
 title: 'Hailor'
-duration: '2025.02.10 - 20205.02.20'
+duration: '2025.02.10 - 2025.02.20'
 team: 'PM 1명, Backend 4명, Frontend 2명, Designer 1명'
 links:
   - name: 'Github'

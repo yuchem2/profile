@@ -22,7 +22,7 @@ photos:
     caption: '게시글 생성 페이지'
   - src: '/images/arecibo/message.png'
     alt: 'arecibo-message'
-    caption: '게시글 및 댓글 작성 페이지 페이지'
+    caption: '게시글 및 댓글 작성 페이지'
   - src: '/images/arecibo/written.png'
     alt: 'arecibo-written'
     caption: '작성한 게시글 및 댓글 보기 페이지'
