@@ -19,6 +19,7 @@
 
   html {
     font-size: 56.25%;
+    background-color: var(--background-color);
   }
 
   body {
@@ -32,7 +33,6 @@
     min-height: 297mm;
     padding: 12mm 10mm;
     margin: 0 auto;
-    background: white;
     page-break-after: always;
     overflow: auto;
   }
@@ -41,12 +41,24 @@
     page-break-after: auto;
   }
 
+  .profile-container {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+  }
+
+  .profile-item {
+    flex-direction: row !important;
+  }
+
+  .profile-item-header {
+    width: 40% !important;
+  }
+
   .portfolio-container {
     width: 210mm;
-    min-height: 297mm;
+    min-height: 297mm !important;
     padding: 0;
     margin: 0 auto;
-    background: white;
     page-break-after: always;
   }
 
@@ -54,13 +66,12 @@
     width: 100%;
     padding: 0;
     margin: 0;
-    overflow: auto;
+    overflow: visible !important;
   }
 
   .portfolio-filmstrip {
-    display: flex;
-    flex-direction: column;
-    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 0;
   }
 

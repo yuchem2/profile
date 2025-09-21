@@ -37,7 +37,7 @@
     "prettier": "^3.4.2"
   },
   "dependencies": {
-    "gray-matter": "^4.0.3",
+    "front-matter": "^4.0.2",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
