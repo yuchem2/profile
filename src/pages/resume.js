@@ -21,11 +21,13 @@ export default function Resume() {
           </div>
         </div>
         <Education />
+        <Awards />
+        <Skill />
       </div>
-      <Awards />
-      <Skill />
-      <Project />
-      <Others />
+      <div className="a4-page">
+        <Project />
+        <Others />
+      </div>
     </div>
   );
 }

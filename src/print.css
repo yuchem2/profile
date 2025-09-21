@@ -13,6 +13,13 @@
 
   * {
     box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html {
+    font-size: 56.25%;
+    background-color: var(--background-color);
   }
 
   body {
@@ -24,14 +31,59 @@
   .a4-page {
     width: 210mm;
     min-height: 297mm;
-    padding: 20mm;
+    padding: 12mm 10mm;
     margin: 0 auto;
-    background: white;
     page-break-after: always;
+    overflow: auto;
   }
 
   .a4-page:last-child {
     page-break-after: auto;
+  }
+
+  .profile-container {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+  }
+
+  .profile-item {
+    flex-direction: row !important;
+  }
+
+  .profile-item-header {
+    width: 40% !important;
+  }
+
+  .portfolio-container {
+    width: 210mm;
+    min-height: 297mm !important;
+    padding: 0;
+    margin: 0 auto;
+    page-break-after: always;
+  }
+
+  .portfolio-viewport {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: visible !important;
+  }
+
+  .portfolio-filmstrip {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0;
+  }
+
+  .portfolio-item-wrapper {
+    width: 100%;
+    height: 297mm;
+    padding: 10mm;
+    page-break-after: always;
+  }
+
+  .nav-button {
+    display: none !important;
   }
 
   /* Hide elements not needed for print */
