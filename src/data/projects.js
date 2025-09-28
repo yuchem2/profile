@@ -38,7 +38,7 @@ export const projects = [
     role: '기획과 UI/UX 설계 참여. 웹 뷰 개발 및 네이티브 웹 개발. 웹과 네이티브 앱의 통신 관리',
     url: [
       {
-        name: 'none',
+        name: 'Github',
         href: 'https://github.com/Beyond-Imagination/fienmee',
       },
     ],
