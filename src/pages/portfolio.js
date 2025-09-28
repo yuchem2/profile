@@ -73,11 +73,7 @@ export default function Portfolio() {
     );
   }
 
-  const paddedPortfolio = [
-    portfolio[portfolio.length - 1],
-    ...portfolio,
-    portfolio[0],
-  ];
+  const paddedPortfolio = [portfolio[portfolio.length - 1], ...portfolio, portfolio[0]];
 
   return (
     <div className="portfolio-container">
