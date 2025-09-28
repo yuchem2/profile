@@ -78,7 +78,7 @@ code {
   color: var(--code-text-color);
   border-radius: 0.5rem;
   padding: 0.1rem 0.5rem;
-  vertical-align: center;
+  vertical-align: middle;
 }
 
 body.dark-theme {
