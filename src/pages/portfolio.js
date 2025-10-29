@@ -12,6 +12,39 @@ export default function Portfolio() {
   const [loading, setLoading] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const filmRef = useRef(null);
+  const touchStartX = useRef(0);
+  const touchDistX = useRef(0);
+  const isSwiping = useRef(false);
+
+  const handlePrev = () => {
+    if (currentIndex <= 0) return;
+    setCurrentIndex(prevIndex => Math.round(prevIndex) - 1);
+  };
+
+  const handleNext = () => {
+    if (currentIndex >= portfolio.length + 1) return;
+    setCurrentIndex(prevIndex => Math.round(prevIndex) + 1);
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    isSwiping.current = true;
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isSwiping.current) return;
+    touchDistX.current = e.touches[0].clientX - touchStartX.current;
+    if (Math.abs(touchDistX.current) > 50) return;
+    setCurrentIndex(prevIndex => prevIndex - touchDistX.current * 0.01);
+  };
+
+  const handleTouchEnd = () => {
+    if (!isSwiping.current) return;
+    isSwiping.current = false;
+
+    if (touchDistX.current < -50) handleNext();
+    else if (touchDistX.current > 50) handlePrev();
+  };
 
   useEffect(() => {
     const fetchPortfolioData = async () => {
@@ -35,6 +68,18 @@ export default function Portfolio() {
     const filmStrip = filmRef.current;
     if (!filmStrip) return;
 
+    const handleMediaChange = (e) => {
+      if (e.matches) { // 화면 너비가 980px 이하일 때
+        filmStrip.addEventListener('touchstart', handleTouchStart);
+        filmStrip.addEventListener('touchmove', handleTouchMove);
+        filmStrip.addEventListener('touchend', handleTouchEnd);
+      } else { // 980px 초과일 때 리스너 제거
+        filmStrip.removeEventListener('touchstart', handleTouchStart);
+        filmStrip.removeEventListener('touchmove', handleTouchMove);
+        filmStrip.removeEventListener('touchend', handleTouchEnd);
+      }
+    };
+
     const handleTransitionEnd = () => {
       if (currentIndex === 0) {
         setIsTransitioning(false);
@@ -44,8 +89,19 @@ export default function Portfolio() {
         setCurrentIndex(1);
       }
     };
+
+    const mediaQuery = window.matchMedia('(max-width: 980px)');
+    handleMediaChange(mediaQuery);
+    mediaQuery.addEventListener('change', handleMediaChange);
+
     filmStrip.addEventListener('transitionend', handleTransitionEnd);
-    return () => filmStrip.removeEventListener('transitionend', handleTransitionEnd);
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaChange);
+      filmStrip.removeEventListener('touchstart', handleTouchStart);
+      filmStrip.removeEventListener('touchmove', handleTouchMove);
+      filmStrip.removeEventListener('touchend', handleTouchEnd);
+      filmStrip.removeEventListener('transitionend', handleTransitionEnd);
+    }
   }, [currentIndex, portfolio.length]);
 
   useEffect(() => {
@@ -54,16 +110,6 @@ export default function Portfolio() {
       return () => clearTimeout(timer);
     }
   }, [isTransitioning]);
-
-  const handlePrev = () => {
-    if (currentIndex <= 0) return;
-    setCurrentIndex(prevIndex => prevIndex - 1);
-  };
-
-  const handleNext = () => {
-    if (currentIndex >= portfolio.length + 1) return;
-    setCurrentIndex(prevIndex => prevIndex + 1);
-  };
 
   if (loading) {
     return (
