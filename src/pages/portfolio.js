@@ -12,6 +12,31 @@ export default function Portfolio() {
   const [loading, setLoading] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const filmRef = useRef(null);
+  const touchStartX = useRef(0);
+  const isSwiping = useRef(false);
+
+  const handlePrev = () => {
+    if (currentIndex <= 0) return;
+    setCurrentIndex(prevIndex => Math.round(prevIndex) - 1);
+  };
+
+  const handleNext = () => {
+    if (currentIndex >= portfolio.length + 1) return;
+    setCurrentIndex(prevIndex => Math.round(prevIndex) + 1);
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    isSwiping.current = true;
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
+
+    if (diff > 50) handleNext();
+    else if (diff < -50) handlePrev();
+  };
 
   useEffect(() => {
     const fetchPortfolioData = async () => {
@@ -35,6 +60,16 @@ export default function Portfolio() {
     const filmStrip = filmRef.current;
     if (!filmStrip) return;
 
+    const handleMediaChange = (e) => {
+      if (e.matches) { // 화면 너비가 980px 이하일 때
+        filmStrip.addEventListener('touchstart', handleTouchStart);
+        filmStrip.addEventListener('touchend', handleTouchEnd);
+      } else { // 980px 초과일 때 리스너 제거
+        filmStrip.removeEventListener('touchstart', handleTouchStart);
+        filmStrip.removeEventListener('touchend', handleTouchEnd);
+      }
+    };
+
     const handleTransitionEnd = () => {
       if (currentIndex === 0) {
         setIsTransitioning(false);
@@ -44,26 +79,26 @@ export default function Portfolio() {
         setCurrentIndex(1);
       }
     };
+
+    const mediaQuery = window.matchMedia('(max-width: 980px)');
+    handleMediaChange(mediaQuery);
+    mediaQuery.addEventListener('change', handleMediaChange);
+
     filmStrip.addEventListener('transitionend', handleTransitionEnd);
-    return () => filmStrip.removeEventListener('transitionend', handleTransitionEnd);
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaChange);
+      filmStrip.removeEventListener('touchstart', handleTouchStart);
+      filmStrip.removeEventListener('touchend', handleTouchEnd);
+      filmStrip.removeEventListener('transitionend', handleTransitionEnd);
+    }
   }, [currentIndex, portfolio.length]);
 
   useEffect(() => {
     if (!isTransitioning) {
-      const timer = setTimeout(() => setIsTransitioning(true), 50);
-      return () => clearTimeout(timer);
+      const raf = requestAnimationFrame(() => setIsTransitioning(true));
+      return () => cancelAnimationFrame(raf);
     }
   }, [isTransitioning]);
-
-  const handlePrev = () => {
-    if (currentIndex <= 0) return;
-    setCurrentIndex(prevIndex => prevIndex - 1);
-  };
-
-  const handleNext = () => {
-    if (currentIndex >= portfolio.length + 1) return;
-    setCurrentIndex(prevIndex => prevIndex + 1);
-  };
 
   if (loading) {
     return (
@@ -80,6 +115,20 @@ export default function Portfolio() {
       <button className="nav-button prev-button" onClick={handlePrev}>
         <LeftArrow width="2.4rem" height="2.4rem" />
       </button>
+      <div className="portfolio-indicators">
+        {portfolio.map((_, idx) => {
+          const isActive = currentIndex === idx + 1;
+          const isFirstGhost = currentIndex === 0 && idx === portfolio.length - 1;
+          const isLastGhost = currentIndex === portfolio.length + 1 && idx === 0;
+
+          return (
+            <span
+              key={idx}
+              className={`indicator-bar ${isActive || isFirstGhost || isLastGhost ? 'active' : ''}`}
+            />
+          );
+        })}
+      </div>
       <div className="portfolio-viewport">
         <div
           className="portfolio-filmstrip"
