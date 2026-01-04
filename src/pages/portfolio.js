@@ -13,7 +13,6 @@ export default function Portfolio() {
   const [isTransitioning, setIsTransitioning] = useState(true);
   const filmRef = useRef(null);
   const touchStartX = useRef(0);
-  const touchDistX = useRef(0);
   const isSwiping = useRef(false);
 
   const handlePrev = () => {
@@ -31,19 +30,12 @@ export default function Portfolio() {
     isSwiping.current = true;
   };
 
-  const handleTouchMove = (e) => {
-    if (!isSwiping.current) return;
-    touchDistX.current = e.touches[0].clientX - touchStartX.current;
-    if (Math.abs(touchDistX.current) > 50) return;
-    setCurrentIndex(prevIndex => prevIndex - touchDistX.current * 0.01);
-  };
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
 
-  const handleTouchEnd = () => {
-    if (!isSwiping.current) return;
-    isSwiping.current = false;
-
-    if (touchDistX.current < -50) handleNext();
-    else if (touchDistX.current > 50) handlePrev();
+    if (diff > 50) handleNext();
+    else if (diff < -50) handlePrev();
   };
 
   useEffect(() => {
@@ -71,11 +63,9 @@ export default function Portfolio() {
     const handleMediaChange = (e) => {
       if (e.matches) { // 화면 너비가 980px 이하일 때
         filmStrip.addEventListener('touchstart', handleTouchStart);
-        filmStrip.addEventListener('touchmove', handleTouchMove);
         filmStrip.addEventListener('touchend', handleTouchEnd);
       } else { // 980px 초과일 때 리스너 제거
         filmStrip.removeEventListener('touchstart', handleTouchStart);
-        filmStrip.removeEventListener('touchmove', handleTouchMove);
         filmStrip.removeEventListener('touchend', handleTouchEnd);
       }
     };
@@ -98,7 +88,6 @@ export default function Portfolio() {
     return () => {
       mediaQuery.removeEventListener('change', handleMediaChange);
       filmStrip.removeEventListener('touchstart', handleTouchStart);
-      filmStrip.removeEventListener('touchmove', handleTouchMove);
       filmStrip.removeEventListener('touchend', handleTouchEnd);
       filmStrip.removeEventListener('transitionend', handleTransitionEnd);
     }
@@ -106,8 +95,8 @@ export default function Portfolio() {
 
   useEffect(() => {
     if (!isTransitioning) {
-      const timer = setTimeout(() => setIsTransitioning(true), 50);
-      return () => clearTimeout(timer);
+      const raf = requestAnimationFrame(() => setIsTransitioning(true));
+      return () => cancelAnimationFrame(raf);
     }
   }, [isTransitioning]);
 
@@ -130,6 +119,20 @@ export default function Portfolio() {
       <button className="nav-button prev-button" onClick={handlePrev}>
         <LeftArrow width="2.4rem" height="2.4rem" />
       </button>
+      <div className="portfolio-indicators">
+        {portfolio.map((_, idx) => {
+          const isActive = currentIndex === idx + 1;
+          const isFirstGhost = currentIndex === 0 && idx === portfolio.length - 1;
+          const isLastGhost = currentIndex === portfolio.length + 1 && idx === 0;
+
+          return (
+            <span
+              key={idx}
+              className={`indicator-bar ${isActive || isFirstGhost || isLastGhost ? 'active' : ''}`}
+            />
+          );
+        })}
+      </div>
       <div className="portfolio-viewport">
         <div
           className="portfolio-filmstrip"

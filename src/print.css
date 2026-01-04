@@ -82,6 +82,10 @@
     page-break-after: always;
   }
 
+  .portfolio-indicators {
+    display: none !important;
+  }
+
   .nav-button {
     display: none !important;
   }
