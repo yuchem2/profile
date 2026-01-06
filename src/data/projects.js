@@ -29,7 +29,7 @@ export const projects = [
   },
   {
     title: 'Fienmee',
-    duration: '2024.08-ing',
+    duration: '2024.08-2025.12.31',
     description: 'Beyond-Imagination',
     skills: ['Express.js', 'Node.js', 'Next.js', 'React', 'React Native', 'mongoDB', 'TypeScript'],
     images: ['/images/fienmee.png'],
@@ -40,6 +40,14 @@ export const projects = [
       {
         name: 'Github',
         href: 'https://github.com/Beyond-Imagination/fienmee',
+      },
+      {
+        name: 'Notion',
+        href: 'https://beyond-imagination.notion.site/Fienmee-681b57bc497344bb86821f077a42297e',
+      },
+      {
+        name: 'ONEstore',
+        href: 'https://m.onestore.co.kr/v2/ko-kr/app/0001002413',
       },
     ],
   },
