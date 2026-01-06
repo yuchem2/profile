@@ -1,5 +1,11 @@
 export const awards = [
   {
+    title: '2025 오픈소스 개발자대회 동상',
+    duration: '2025.12.05',
+    description: '한국오픈소스협회',
+    paragraph: '2025 오픈소스 개발자대회에서 "express-cargo"를 개발하여 일반 부분에서 동상 입상'
+  },
+  {
     title: '졸업 특대생 표창',
     duration: '2025.02',
     description: '고려대학교',
