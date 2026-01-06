@@ -1,12 +1,14 @@
 ---
 title: 'Fienmee'
-duration: '2024.08 - ing'
+duration: '2024.08 - 2025.12.31'
 team: '포지션 구분없이 7명 참여'
 links:
   - name: 'Github'
     href: 'https://github.com/Beyond-Imagination/fienmee'
   - name: 'Notion'
     href: 'https://beyond-imagination.notion.site/Fienmee-681b57bc497344bb86821f077a42297e'
+  - name: 'ONEstore'
+    href: 'https://m.onestore.co.kr/v2/ko-kr/app/0001002413'
 photos:
   - src: '/images/fienmee/page1.png'
     alt: 'fienmee-page1'
